@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="args"
+            type="com.example.todonoteapp.data.model.NoteData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        tools:context=".presentation.update.UpdateFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUpdateNoteTitle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:autofillHints="Title"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/title"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@{args.title}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/ship_gray"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sUpdateNote"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:entries="@array/spinner_priority"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:parsePriorityToInt="@{args.priority}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUpdateNoteTitle" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUpdateNoteDesc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:autofillHints="To Do"
+            android:background="@drawable/bg_edittext"
+            android:gravity="start|top"
+            android:hint="@string/write_note"
+            android:inputType="textMultiLine"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="@{args.description}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/ship_gray"
+            app:layout_constraintBottom_toTopOf="@id/btnUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sUpdateNote" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/update"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUpdateNoteDesc"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="5dp"
+            android:padding="5dp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/delete"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
